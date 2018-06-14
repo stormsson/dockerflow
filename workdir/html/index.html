@@ -1,0 +1,79 @@
+<html>
+<head>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.6"> </script>
+    <script type="text/javascript">
+
+        async function init() {
+
+            const loadedModel = await tf.loadModel('../js/pre-trained-sinxApproximation100epochs-tfjs/model.json');
+
+
+
+            const testRun = tf.tidy(() => {
+                var input_requests = [0.0, 0.5, 1.0, 1.5, 2.0]
+                loadedModel.predict(tf.tensor2d(input_requests,[input_requests.length, 1])).print();
+            });
+
+
+
+            function predict(){
+                el = document.getElementById("in")
+                console.log(el);
+                const result = loadedModel.predict(tf.tensor2d([v], [1, 1]));
+                const x = pippo.toFloat().dataSync()[0]
+
+            }
+
+            window.onload = function() {
+                var el = document.getElementById("subm");
+                var text = document.getElementById("in");
+                var resContainer = document.getElementById("result")
+                el.addEventListener('click', () => {
+                    var v = text.value;
+                    console.log(v)
+                    const result = loadedModel.predict(tf.tensor2d([v], [1, 1]));
+                    resContainer.innerHTML = "Prediction: "+result.toFloat().dataSync()[0];
+
+                }, false);
+            }
+
+            // var pippo = loadedModel.predict(tf.tensor2d([0.0], [1, 1]))
+            // const x = pippo.toFloat().dataSync()[0]
+            // console.log(x)
+            return loadedModel;
+        }
+
+        init();
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <div style="margin: 30px auto;width:50%">
+            <h2>sin(x) approximation</h2>
+            This page loads a pre-trained model that tries to approximate <strong>sin(x)</strong>.
+            <br/>
+            Insert a value in the following form to execute a prediction with the model
+
+             <div style="margin-top:40px">
+                <label for="in">Value in radians [0.0 - 2.0]:</label>
+                <input type="text" id="in" value="1.0" />
+                <button id="subm">Predict</button>
+            </div>
+
+            <div id="result" style="margin-top:10px"></div>
+        </div>
+    </div>
+<br/>
+
+
+
+
+</body>
+</html>
