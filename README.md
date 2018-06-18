@@ -1,17 +1,13 @@
 
-# TensorBoard exposed on port 6006
-# IPython exposed on port 8888
 
-# Python server exposed on port 8080
-
-This image contains a pre made environment to work with tensorflow and tensorflow-js.
+This image contains a pre made environment to work with tensorflow, tensorflow-js and keras.
 
 Frontend
 ========
 
 To check the frontend simply run the container with:
 
-docker run -d -p 8080:8080 camillo/dockerflow
+docker run -d -p 8080:8080 ccamillo/dockerflow
 
  and open your browser to http://localhost:8080/static/html/
 
@@ -33,4 +29,9 @@ The contents are in
 
 To train the model run
 
-docker run --rm camillo/dockerflow python static/py/train.py
+docker run --rm ccamillo/dockerflow python static/py/train.py
+
+# Exposed Ports
+* TensorBoard exposed on port 6006
+* IPython exposed on port 8888
+* Python webserver exposed on port 8080
