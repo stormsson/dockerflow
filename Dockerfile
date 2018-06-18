@@ -10,9 +10,9 @@ RUN pip --no-cache-dir install \
  tensorflowjs \
  plotly
 
-RUN mkdir -p /workdir/static
+RUN mkdir -p /static
 
-ADD workdir/ /workdir/static/
+ADD scaffolding/ /static/
 ADD entrypoint.sh /usr/local/bin
 
 RUN chmod 0755 /usr/local/bin/entrypoint.sh

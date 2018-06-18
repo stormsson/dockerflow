@@ -180,7 +180,7 @@ model_100 = createAndTrainModel(data, epochs)
 
 drawResultChart([model_20, model_50, model_100], ["20 epochs", "50 epochs", "100 epochs"])
 
-savePath = "models/sinxApproximation100epochs.h5"
+savePath = "sinxApproximation100epochs.h5"
 try:
     model_100.save(savePath)
     print("model saved to %s " % savePath)

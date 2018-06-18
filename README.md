@@ -29,7 +29,10 @@ The contents are in
 
 To train the model run
 
-docker run --rm ccamillo/dockerflow python static/py/train.py
+docker run --rm -v $(PWD):/workdir camillo/dockerflow python /static/py/train.py.
+this will create a trained model in your work directory.
+
+The model is the a copy of the one used in the frontend area and already included in this container.
 
 # Exposed Ports
 * TensorBoard exposed on port 6006
