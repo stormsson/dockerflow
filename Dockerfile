@@ -1,9 +1,5 @@
 FROM tensorflow/tensorflow:latest
 
-# RUN apt-get update && apt-get install -y \
-#    python-tk \
-#    && rm -rf /var/lib/apt/lists/*
-
 RUN pip --no-cache-dir install \
  keras \
  tflearn \
