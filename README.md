@@ -9,7 +9,7 @@ To check the frontend simply run the container with:
 
     docker run -d -p 8080:8080 ccamillo/dockerflow
 
-and open your browser to http://localhost:8080/static/html/
+and open your browser to http://localhost:8080/html/
 
 The frontend area is a simple html page that loads a pre-elaborated model that approximates the value of sin(x)
 The contents are in
