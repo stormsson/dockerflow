@@ -57,6 +57,13 @@ In this training we used Keras to generate the model.
 To use it in TensorFlow.js a conversion is needed.
 Check https://js.tensorflow.org/tutorials/import-keras.html for details.
 
+### Experimenting with the model
+Starting experimenting models and the backend is easy.
+- copy py/train.py in your work directory
+- edit the file and modify it to your tastes
+- run
+
+    docker run --rm -v $(pwd):/workdir/ ccamillo/dockerflow python /workdir/train.py .
 
 
 # Exposed Ports
