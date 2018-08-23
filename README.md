@@ -52,6 +52,12 @@ The results in output-data.html will show that the approximation is very similar
 
 The model is the a copy of the one used in the frontend area and already included in this container.
 
+# Converting the model from Keras to TensorFlow.js
+In this training we used Keras to generate the model.
+To use it in TensorFlow.js a conversion is needed.
+Check https://js.tensorflow.org/tutorials/import-keras.html for details.
+
+
 
 # Exposed Ports
 * TensorBoard exposed on port 6006
