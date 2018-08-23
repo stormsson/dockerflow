@@ -20,11 +20,8 @@
                 el = document.getElementById("in")
                 console.log(el);
                 const result = loadedModel.predict(tf.tensor2d([v], [1, 1]));
-                const x = pippo.toFloat().dataSync()[0]
-
             }
 
-            window.onload = function() {
                 var el = document.getElementById("subm");
                 var text = document.getElementById("in");
                 var resContainer = document.getElementById("result")
@@ -35,7 +32,6 @@
                     resContainer.innerHTML = "Prediction: "+result.toFloat().dataSync()[0];
 
                 }, false);
-            }
 
             // var pippo = loadedModel.predict(tf.tensor2d([0.0], [1, 1]))
             // const x = pippo.toFloat().dataSync()[0]
